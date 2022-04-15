@@ -13,19 +13,19 @@
         android:theme="@style/Theme.Tuan05"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".DeleteProduct"
+            android:name=".DeleteStaff"
             android:exported="false" />
         <activity
-            android:name=".UpdatePriceProduct"
+            android:name=".UpdateSalaryStaff"
             android:exported="false" />
         <activity
-            android:name=".ShowProductDetails"
+            android:name=".ShowStaffDetails"
             android:exported="false" />
         <activity
-            android:name=".ShowAllProduct"
+            android:name=".ShowAllStaff"
             android:exported="false" />
         <activity
-            android:name=".InsertProduct"
+            android:name=".InsertStaff"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

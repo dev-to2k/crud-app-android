@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InsertProduct">
+    tools:context=".InsertStaff">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,46 +20,52 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add Product"
+                android:text="Add Staff"
                 android:gravity="center_horizontal"
                 android:textSize="20sp"
                 android:textStyle="bold"/>
 
             <EditText
-                android:id="@+id/name"
+                android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="name"/>
+                android:hint="Full name"/>
 
             <EditText
-                android:id="@+id/price"
+                android:id="@+id/dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="price"/>
+                android:hint="YYYY-mm-dd"/>
 
             <EditText
-                android:id="@+id/desc"
+                android:id="@+id/birthPlace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="desc"/>
+                android:hint="Birth place"/>
+
+            <EditText
+                android:id="@+id/salary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Salary"/>
 
             <RadioGroup
-                android:id="@+id/color_group"
+                android:id="@+id/gender_group"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center">
                 <RadioButton
-                    android:id="@+id/radio_black_color"
-                    android:text="Black"
+                    android:id="@+id/radio_male"
+                    android:text="Male"
                     android:checked="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10sp"/>
 
                 <RadioButton
-                    android:id="@+id/radio_white_color"
-                    android:text="White"
+                    android:id="@+id/radio_female"
+                    android:text="Female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </RadioGroup>
@@ -67,8 +73,8 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Add product"
-                android:onClick="add_prod"/>
+                android:text="Add staff"
+                android:onClick="add_staff"/>
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

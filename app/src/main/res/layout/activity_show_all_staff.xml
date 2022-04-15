@@ -4,13 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowAllProduct">
-<!--    <ScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        tools:ignore="MissingConstraints">-->
-<!--        -->
-<!--    </ScrollView>-->
+    tools:context=".ShowAllStaff">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,8 +17,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Display List Product"
-            android:onClick="show_all_prod"
+            android:text="Display List Staff"
+            android:onClick="show_all_staff"
             android:layout_marginBottom="20sp"/>
 
         <ListView

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowProductDetails">
+    tools:context=".ShowStaffDetails">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Show Product"
+                android:text="Show Staff"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -44,40 +44,48 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:onClick="show_prod"
+                    android:onClick="show_staff"
                     android:text="Go" />
             </LinearLayout>
 
 
             <TextView
-                android:id="@+id/showname"
+                android:id="@+id/showfullname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product Name"
+                android:text="Full name"
                 android:textSize="18sp"
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/showprice"
+                android:id="@+id/showdob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product Price"
+                android:text="Dob"
                 android:textSize="18sp"
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/showdesc"
+                android:id="@+id/showbirthplace"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product Desc"
+                android:text="Birth place"
                 android:textSize="18sp"
                 android:visibility="gone" />
 
             <TextView
-                android:id="@+id/showcolor"
+                android:id="@+id/showsalary"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Product Color"
+                android:text="Salary"
+                android:textSize="18sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/showgender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender"
                 android:textSize="18sp"
                 android:visibility="gone" />
         </LinearLayout>

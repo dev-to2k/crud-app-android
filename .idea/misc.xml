@@ -4,11 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_delete_product.xml" value="0.25" />
+        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_delete_staff.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_insert_product.xml" value="0.25" />
+        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_insert_staff.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
-        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_show_all_product.xml" value="0.25" />
+        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_show_all_product.xml" value="0.1" />
+        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_show_all_staff.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_show_product_details.xml" value="0.25" />
+        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_show_staff_details.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_update_price_product.xml" value="0.25" />
+        <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/activity_update_salary_staff.xml" value="0.25" />
         <entry key="..\:/Users/Administrator/Desktop/All_Folder/Android_Nang_Cao/Thuc_Hanh/Tuan05/app/src/main/res/layout/layout.xml" value="0.1" />
       </map>
     </option>

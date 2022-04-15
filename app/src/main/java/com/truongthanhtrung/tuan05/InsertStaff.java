@@ -16,36 +16,39 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class InsertProduct extends AppCompatActivity {
-    public static final String URL_ADD_PROD = "http://192.168.0.122/api/create_product.php";
-    private EditText etName;
-    private EditText etPrice;
-    private EditText etDesc;
+public class InsertStaff extends AppCompatActivity {
+    public static final String URL_ADD_STAFF = "http://192.168.43.62/api/create_staff.php";
+    private EditText etFullName;
+    private EditText etDob;
+    private EditText etBirthPlace;
+    private EditText etSalary;
     private RadioGroup radioGroup;
-    private RadioButton radioColorButton;
+    private RadioButton radioGenderButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_insert_product);
-        etName = findViewById(R.id.name);
-        etPrice = findViewById(R.id.price);
-        etDesc = findViewById(R.id.desc);
-        radioGroup = findViewById(R.id.color_group);
+        setContentView(R.layout.activity_insert_staff);
+        etFullName = findViewById(R.id.fullName);
+        etDob = findViewById(R.id.dob);
+        etBirthPlace = findViewById(R.id.birthPlace);
+        etSalary = findViewById(R.id.salary);
+        radioGroup = findViewById(R.id.gender_group);
     }
 
-    public void add_prod(View view) {
-        final String name = etName.getText().toString();
-        final String price = etPrice.getText().toString();
-        final String desc = etDesc.getText().toString();
+    public void add_staff(View view) {
+        final String fullName = etFullName.getText().toString();
+        final String dob = etDob.getText().toString();
+        final String birthPlace = etBirthPlace.getText().toString();
+        final String salary = etSalary.getText().toString();
 
         int selectedId = radioGroup.getCheckedRadioButtonId();
-        radioColorButton = findViewById(selectedId);
+        radioGenderButton = findViewById(selectedId);
 
-        final String color = radioColorButton.getText().toString();
+        final String gender = radioGenderButton.getText().toString();
 
-        class Product extends AsyncTask<Void, Void, String> {
-            ProgressDialog pdLoading = new ProgressDialog(InsertProduct.this);
+        class Staff extends AsyncTask<Void, Void, String> {
+            ProgressDialog pdLoading = new ProgressDialog(InsertStaff.this);
 
             @Override
             protected void onPreExecute() {
@@ -60,12 +63,13 @@ public class InsertProduct extends AppCompatActivity {
                 RequestHandler requestHandler = new RequestHandler();
 
                 HashMap<String, String> params = new HashMap<>();
-                params.put("name", name);
-                params.put("price", price);
-                params.put("description", desc);
-                params.put("color", color);
+                params.put("hotennv", fullName);
+                params.put("ngaysinh", dob);
+                params.put("noisinh", birthPlace);
+                params.put("luong", salary);
+                params.put("gioitinh", gender);
 
-                return requestHandler.sendPostRequest(URL_ADD_PROD, params);
+                return requestHandler.sendPostRequest(URL_ADD_STAFF, params);
             }
 
             @Override
@@ -74,18 +78,17 @@ public class InsertProduct extends AppCompatActivity {
                 pdLoading.dismiss();
                 try {
                     JSONObject obj = new JSONObject(s);
-                    System.out.println(obj);
                     if (!obj.getBoolean("error")) {
                         Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
-                    Toast.makeText(InsertProduct.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(InsertStaff.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
                 }
             }
         }
 
-        Product prod_exec = new Product();
-        prod_exec.execute();
+        Staff staff_exec = new Staff();
+        staff_exec.execute();
     }
 }

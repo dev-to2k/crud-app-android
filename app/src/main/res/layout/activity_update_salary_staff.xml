@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UpdatePriceProduct">
+    tools:context=".UpdateSalaryStaff">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
-                android:text="Update Product Price"
+                android:text="Update Salary Staff"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -40,13 +40,13 @@
                 android:id="@+id/price_update"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Enter price" />
+                android:hint="Enter salary" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="update_price"
-                android:text="Update Price" />
+                android:onClick="update_salary"
+                android:text="Update Salary" />
 
 
         </LinearLayout>

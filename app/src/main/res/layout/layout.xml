@@ -4,27 +4,35 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
     <TextView
-        android:id="@+id/txtName"
+        android:id="@+id/txtFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Name"/>
+        android:text="Full name"/>
     <TextView
-        android:id="@+id/txtPrice"
+        android:id="@+id/txtDob"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Price"/>
+        android:text="Dob"/>
     <TextView
-        android:id="@+id/txtDesc"
+        android:id="@+id/txtBirthPlace"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Description"/>
+        android:text="Birth place"/>
+
     <TextView
-        android:id="@+id/txtColor"
+        android:id="@+id/txtSalary"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Color"/>
+        android:text="Salary"/>
+
+    <TextView
+        android:id="@+id/txtGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Gender"/>
 </LinearLayout>

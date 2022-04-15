@@ -13,24 +13,24 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class UpdatePriceProduct extends AppCompatActivity {
-    public static final String URL_UPDATE_PROD = "http://192.168.0.122/api/update_price.php";
+public class UpdateSalaryStaff extends AppCompatActivity {
+    public static final String URL_UPDATE_STAFF = "http://192.168.43.62/api/update_salary.php";
     private EditText etIdUpdate, etPriceUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_update_price_product);
+        setContentView(R.layout.activity_update_salary_staff);
         etIdUpdate = findViewById(R.id.id_update);
         etPriceUpdate = findViewById(R.id.price_update);
     }
 
-    public void update_price(View view) {
+    public void update_salary(View view) {
         final String id = etIdUpdate.getText().toString();
-        final String price = etPriceUpdate.getText().toString();
+        final String salary = etPriceUpdate.getText().toString();
 
         class Update extends AsyncTask<Void, Void, String> {
-            ProgressDialog pdLoading = new ProgressDialog(UpdatePriceProduct.this);
+            ProgressDialog pdLoading = new ProgressDialog(UpdateSalaryStaff.this);
 
             @Override
             protected void onPreExecute() {
@@ -45,10 +45,10 @@ public class UpdatePriceProduct extends AppCompatActivity {
                 RequestHandler requestHandler = new RequestHandler();
 
                 HashMap<String, String> params = new HashMap<>();
-                params.put("id", id);
-                params.put("price", price);
+                params.put("manv", id);
+                params.put("luong", salary);
 
-                return requestHandler.sendPostRequest(URL_UPDATE_PROD, params);
+                return requestHandler.sendPostRequest(URL_UPDATE_STAFF, params);
             }
 
             @Override
@@ -59,11 +59,11 @@ public class UpdatePriceProduct extends AppCompatActivity {
                 try {
                     JSONObject obj = new JSONObject(s);
                     if (!obj.getBoolean("error")) {
-                        Toast.makeText(UpdatePriceProduct.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateSalaryStaff.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(UpdatePriceProduct.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateSalaryStaff.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
                 }
             }
         }

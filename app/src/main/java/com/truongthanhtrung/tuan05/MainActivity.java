@@ -2,24 +2,10 @@ package com.truongthanhtrung.tuan05;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnInsertProduct;
@@ -27,6 +13,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnShowProductDetails;
     Button btnUpdatePriceProduct;
     Button btnDeleteProduct;
+    Button btnExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,36 +34,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnDeleteProduct = findViewById(R.id.btnDeleteProduct);
         btnDeleteProduct.setOnClickListener(this);
+
+        btnExit = findViewById(R.id.btnExit);
+        btnExit.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btnInsertProduct: {
-                Intent i = new Intent(MainActivity.this, InsertProduct.class);
+                Intent i = new Intent(MainActivity.this, InsertStaff.class);
                 v.getContext().startActivity(i);
                 break;
             }
             case R.id.btnShowAllProduct: {
-                Intent i = new Intent(MainActivity.this, ShowAllProduct.class);
+                Intent i = new Intent(MainActivity.this, ShowAllStaff.class);
                 v.getContext().startActivity(i);
                 break;
             }
             case R.id.btnShowProductDetails: {
-                Intent i = new Intent(MainActivity.this, ShowProductDetails.class);
+                Intent i = new Intent(MainActivity.this, ShowStaffDetails.class);
                 v.getContext().startActivity(i);
                 break;
             }
             case R.id.btnUpdatePriceProduct: {
-                Intent i = new Intent(MainActivity.this, UpdatePriceProduct.class);
+                Intent i = new Intent(MainActivity.this, UpdateSalaryStaff.class);
                 v.getContext().startActivity(i);
                 break;
             }
             case R.id.btnDeleteProduct: {
-                Intent i = new Intent(MainActivity.this, DeleteProduct.class);
+                Intent i = new Intent(MainActivity.this, DeleteStaff.class);
                 v.getContext().startActivity(i);
                 break;
             }
+            case R.id.btnExit:
+                finish();
+                System.exit(0);
+                break;
             default:
                 break;
         }

@@ -13,24 +13,24 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-public class DeleteProduct extends AppCompatActivity {
-    public static final String URL_DELETE_PROD = "http://192.168.0.122/api/delete_product.php";
+public class DeleteStaff extends AppCompatActivity {
+    public static final String URL_DELETE_STAFF = "http://192.168.43.62/api/delete_staff.php";
     private EditText etIdDelete;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_delete_product);
+        setContentView(R.layout.activity_delete_staff);
         etIdDelete = findViewById(R.id.id_delete);
 
     }
 
-    public void delete_product(View view) {
+    public void delete_staff(View view) {
         final String id = etIdDelete.getText().toString();
 
         class Delete extends AsyncTask<Void, Void, String> {
-            ProgressDialog pdLoading = new ProgressDialog(DeleteProduct.this);
+            ProgressDialog pdLoading = new ProgressDialog(DeleteStaff.this);
 
             @Override
             protected void onPreExecute() {
@@ -45,9 +45,9 @@ public class DeleteProduct extends AppCompatActivity {
                 RequestHandler requestHandler = new RequestHandler();
 
                 HashMap<String, String> params = new HashMap<>();
-                params.put("id", id);
+                params.put("manv", id);
 
-                return requestHandler.sendPostRequest(URL_DELETE_PROD, params);
+                return requestHandler.sendPostRequest(URL_DELETE_STAFF, params);
             }
 
             @Override
@@ -58,11 +58,11 @@ public class DeleteProduct extends AppCompatActivity {
                 try {
                     JSONObject obj = new JSONObject(s);
                     if (!obj.getBoolean("error")) {
-                        Toast.makeText(DeleteProduct.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(DeleteStaff.this, obj.getString("message"), Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(DeleteProduct.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DeleteStaff.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
                 }
             }
         }

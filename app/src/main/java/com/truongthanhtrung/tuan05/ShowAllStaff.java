@@ -14,19 +14,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class ShowAllProduct extends AppCompatActivity {
-    public static final String URL_SHOW_ALL_PROD = "http://192.168.0.122/api/get_all_product.php";
-    ArrayList<Product> data;
+public class ShowAllStaff extends AppCompatActivity {
+    public static final String URL_SHOW_ALL_STAFF = "http://192.168.43.62/api/get_all_staff.php";
+    ArrayList<Staff> data;
     ListView lvprod;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_all_product);
+        setContentView(R.layout.activity_show_all_staff);
     }
 
-    public void show_all_prod(View view) {
-        class show_all_prod extends AsyncTask<Void, Void, String> {
+    public void show_all_staff(View view) {
+        class show_all_staff extends AsyncTask<Void, Void, String> {
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -36,7 +36,7 @@ public class ShowAllProduct extends AppCompatActivity {
             protected String doInBackground(Void... voids) {
                 RequestHandler requestHandler = new RequestHandler();
                 HashMap<String, String> params = new HashMap<>();
-                return requestHandler.sendPostRequest(URL_SHOW_ALL_PROD, params);
+                return requestHandler.sendPostRequest(URL_SHOW_ALL_STAFF, params);
             }
 
             @Override
@@ -44,32 +44,33 @@ public class ShowAllProduct extends AppCompatActivity {
                 super.onPostExecute(s);
                 try {
                     if (s.isEmpty()) {
-                        Toast.makeText(ShowAllProduct.this, "S khong co gia tri !!!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ShowAllStaff.this, "S khong co gia tri !!!", Toast.LENGTH_SHORT).show();
                         return;
                     }
                     JSONObject obj = new JSONObject(s);
                     if (!obj.getBoolean("error")) {
                         JSONArray jo = obj.getJSONArray("alldata");
-                        data = new ArrayList<Product>();
+                        data = new ArrayList<Staff>();
 
                         for (int i = 0; i < jo.length(); i++) {
-                            data.add(new Product(jo.getJSONObject(i).getString("name"),
-                                    jo.getJSONObject(i).getString("price"),
-                                    jo.getJSONObject(i).getString("description"),
-                                    jo.getJSONObject(i).getString("color")));
+                            data.add(new Staff(jo.getJSONObject(i).getString("hotennv"),
+                                    jo.getJSONObject(i).getString("ngaysinh"),
+                                    jo.getJSONObject(i).getString("gioitinh"),
+                                    jo.getJSONObject(i).getString("noisinh"),
+                                    jo.getJSONObject(i).getString("luong")));
                         }
-                        ProductAdapter adapter = new ProductAdapter(ShowAllProduct.this, R.layout.layout, data);
+                        StaffAdapter adapter = new StaffAdapter(ShowAllStaff.this, R.layout.layout, data);
                         lvprod = findViewById(R.id.list);
                         lvprod.setAdapter(adapter);
-                        Toast.makeText(ShowAllProduct.this, jo.toString(), Toast.LENGTH_SHORT).show();
+                        Toast.makeText(ShowAllStaff.this, jo.toString(), Toast.LENGTH_SHORT).show();
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    Toast.makeText(ShowAllProduct.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ShowAllStaff.this, "Exception: " + e, Toast.LENGTH_SHORT).show();
                 }
             }
         }
-        show_all_prod show = new show_all_prod();
+        show_all_staff show = new show_all_staff();
         show.execute();
     }
 }
